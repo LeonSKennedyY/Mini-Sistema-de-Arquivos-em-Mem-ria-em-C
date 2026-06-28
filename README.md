@@ -57,7 +57,7 @@ stat:       exibe todos os atributos armazenados no FCB do arquivo.
 truncate:   remove todo o conteúdo de um arquivo sem excluí-lo.                       
 seek:       reposiciona a leitura para uma posição específica dentro do arquivo.  
 
-    Comparação com comandos Linux reais
+Comparação com comandos Linux reais
 |Simulador	   | Linux real                 |    
 | -------------| -------------------------- |    
 |    ls	       |  ls -l                     |    
@@ -103,25 +103,25 @@ A struct FCB representa o File Control Block de cada arquivo. Ela armazena nome,
 
 ## Objetivos
 
-Arquivo como tipo abstrato com atributos.
-    | typedef struct FCB
-    | Atende: Nome, Identificador (inode), Tipo, Tamanho, Proteção, Datas
-
-Estrutura de diretórios (Estrutura hierárquica).
-    | typedef struct Diretorio
-    | operações: mkdir, cd, pwd, ls
-
+Arquivo como tipo abstrato com atributos.    
+    | typedef struct FCB    
+    | Atende: Nome, Identificador (inode), Tipo, Tamanho, Proteção, Datas    
+    
+Estrutura de diretórios (Estrutura hierárquica).    
+    | typedef struct Diretorio    
+    | operações: mkdir, cd, pwd, ls    
+    
 Operações básicas com arquivos
-    | Operação	    |Implementada   |
-    | ------------- | -------       |
-    |Criar	        | touch         |
-    |Escrever	    | echo          |
-    |Ler 	        | cat           |
-    |Excluir	    | rm            |
-    |Copiar	        | cp            |
-    |Mover	        | mv            |
-    |Reposicionar   | seek          |
-    |Truncar        | truncate      |
+| Operação	    |Implementada   |
+| ------------- | -------       |
+|Criar	        | touch         |
+|Escrever	    | echo          |
+|Ler 	        | cat           |
+|Excluir	    | rm            |
+|Copiar	        | cp            |
+|Mover	        | mv            |
+|Reposicionar   | seek          |
+|Truncar        | truncate      |
 
 Controle de acesso -- gerenciamento de permissões.  
     possui:     
