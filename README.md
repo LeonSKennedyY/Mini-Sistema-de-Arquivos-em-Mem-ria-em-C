@@ -225,7 +225,7 @@ O FCB referencia os blocos por meio destes campos:
 
 ## Exemplos
 
-Recomendo abrir o arquivo Readme.md para melhor entendimento, pois a formatação da pagina inicial do Github não ficou facilmente visivel.
+Recomendo abrir o arquivo Readme.md para melhor entendimento, pois a formatação da pagina inicial do Github não ficou confuso.
 
 Criando um diretório
 
