@@ -58,22 +58,22 @@ truncate:   remove todo o conteúdo de um arquivo sem excluí-lo.
 seek:       reposiciona a leitura para uma posição específica dentro do arquivo.  
 
     Comparação com comandos Linux reais
-|Simulador	    Linux real
-| -------------| -------------------------- |
-|    ls	       |  ls -l                     |
-|    mkdir	   |  mkdir nome                |
-|    cd	       |  cd nome                   |
-|    touch	   |  touch arquivo             |
-|    echo	   |  echo "texto" > arquivo    |
-|    cat	   |      cat arquivo           |
-|    chmod	   |  chmod 644 arquivo         |
-|    rm	       |  rm arquivo                |
-|    cp	       |  cp origem destino         |
-|    mv	       |  mv origem destino         |
-|mostrar blocos|	Não possui equivalente direto (função didática do simulador)    |
-|    stat	   | stat arquivo               |
-|    truncate  |	truncate -s 0 arquivo   |
-|    seek	   |   lseek() (chamada de sistema) ou reposicionamento usando fseek() em programas C   |
+|Simulador	   | Linux real                 |    
+| -------------| -------------------------- |    
+|    ls	       |  ls -l                     |    
+|    mkdir	   |  mkdir nome                |    
+|    cd	       |  cd nome                   |    
+|    touch	   |  touch arquivo             |    
+|    echo	   |  echo "texto" > arquivo    |    
+|    cat	   |      cat arquivo           |    
+|    chmod	   |  chmod 644 arquivo         |    
+|    rm	       |  rm arquivo                |    
+|    cp	       |  cp origem destino         |    
+|    mv	       |  mv origem destino                                                 |        
+|mostrar blocos|	Não possui equivalente direto (função didática do simulador)    |    
+|    stat	   | stat arquivo               |    
+|    truncate  |	truncate -s 0 arquivo   |    
+|    seek	   |   lseek() (chamada de sistema) ou reposicionamento usando fseek() em programas C   |    
 
 
 ## Conceitos implementados
