@@ -1,14 +1,14 @@
 # Mini-Sistema de Arquivos em Memória em C
 
-Universidade do Vale do Itajaí
+Universidade do Vale do Itajaí    
 Nomes:   
-Gabriel Tenfen
-Leonardo Alberto da Silva
-Mariana Leal
-Disciplina: Sistemas Operacionais
-Atividade M3
-TRABALHO AVALIATIVO: 
-Implementação e Análise de um Mini-Sistema de Arquivos em Memória em C
+Gabriel Tenfen    
+Leonardo Alberto da Silva    
+Mariana Leal    
+Disciplina: Sistemas Operacionais    
+Atividade M3    
+TRABALHO AVALIATIVO:     
+Implementação e Análise de um Mini-Sistema de Arquivos em Memória em C    
 
 
 ## Descrição
