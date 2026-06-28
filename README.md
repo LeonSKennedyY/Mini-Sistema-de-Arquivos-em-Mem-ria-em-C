@@ -151,11 +151,13 @@ Truncar.
 
 A estrutura de diretórios está modelada assim:    
     typedef struct Diretorio    
+    
 Representa uma árvore de diretórios, porque cada diretório possui:    
     pai: aponta para o diretório anterior/superior;    
     subdirs: aponta para seus subdiretórios;    
     prox: permite encadear vários diretórios no mesmo nível;    
     arquivos: lista os arquivos dentro daquele diretório.    
+    
 Também possui criação de diretórios: void mkdirSimulado(char *nome)    
 Navegação entre diretórios: void cdSimulado(char *nome)    
 
@@ -223,83 +225,85 @@ O FCB referencia os blocos por meio destes campos:
 
 ## Exemplos
 
+Recomendo abrir o arquivo Readme.md para melhor entendimento, pois a formatação da pagina inicial do Github não ficou facilmente visivel.
+
 Criando um diretório
 
 Simulador.
-    Opcao: 2
-    Nome do diretorio: documentos
+    Opcao: 2 
+    Nome do diretorio: documentos    
 Linux.
-    mkdir documentos
+    mkdir documentos 
     Navegando entre diretórios
 
 Simulador.
-    Opcao: 3
-    Diretorio: documentos
+    Opcao: 3 
+    Diretorio: documentos        
 Linux.
-    cd documentos
+    cd documentos 
     Criando um arquivo
 
 Simulador.
-    Opcao: 5
-    Nome do arquivo: teste.txt
+    Opcao: 5 
+    Nome do arquivo: teste.txt    
 Linux.
-    touch teste.txt
+    touch teste.txt 
     Escrevendo conteúdo em um arquivo
 
-Simulador.
-    Opcao: 6
-    Arquivo: teste.txt
-    Conteudo: Ola Mundo
-Linux.
-    echo "Ola Mundo" > teste.txt
-    Lendo o conteúdo de um arquivo
+Simulador. 
+    Opcao: 6 
+    Arquivo: teste.txt 
+    Conteudo: Ola Mundo     
+Linux. 
+    echo "Ola Mundo" > teste.txt 
+    Lendo o conteúdo de um arquivo 
 
-Simulador.
-    Opcao: 7
-    Arquivo: teste.txt
-    Saída: Ola Mundo
-Linux.
-    cat teste.txt
-    Alterando permissões
+Simulador. 
+    Opcao: 7 
+    Arquivo: teste.txt 
+    Saída: Ola Mundo     
+Linux. 
+    cat teste.txt 
+    Alterando permissões 
 
-Simulador.
-    Opcao: 8
-    Arquivo: teste.txt
-    Permissao: 644
-Linux.
-    chmod 644 teste.txt
-    Exibindo os metadados do arquivo
+Simulador. 
+    Opcao: 8 
+    Arquivo: teste.txt 
+    Permissao: 644     
+Linux. 
+    chmod 644 teste.txt 
+    Exibindo os metadados do arquivo 
 
-Simulador.
-    Opcao: 13
-    Arquivo: teste.txt
-    Saída (exemplo):
-        Nome: teste.txt
-        Inode: 1
-        Tamanho: 9 bytes
-        Permissões: rw-r--r--
-        Bloco inicial: 0
-        Quantidade de blocos: 1
-Linux.
-    stat teste.txt
-    Truncando um arquivo
+Simulador. 
+    Opcao: 13 
+    Arquivo: teste.txt 
+    Saída (exemplo): 
+        Nome: teste.txt 
+        Inode: 1 
+        Tamanho: 9 bytes 
+        Permissões: rw-r--r-- 
+        Bloco inicial: 0 
+        Quantidade de blocos: 1 
+Linux.     
+    stat teste.txt 
+    Truncando um arquivo 
 
-Simulador.
-    Opcao: 14
-    Arquivo: teste.txt
-Linux.
-    truncate -s 0 teste.txt
-    Reposicionando a leitura
+Simulador. 
+    Opcao: 14 
+    Arquivo: teste.txt 
+Linux.     
+    truncate -s 0 teste.txt 
+    Reposicionando a leitura 
 
-Simulador.
-    Opcao: 15
-    Arquivo: teste.txt
-    Posicao: 4
-    Saída: Mundo
-Linux (conceito equivalente).
-    fseek(arquivo, 4, SEEK_SET);
-    ou
-    lseek(fd, 4, SEEK_SET);
+Simulador. 
+    Opcao: 15 
+    Arquivo: teste.txt 
+    Posicao: 4 
+    Saída: Mundo     
+Linux (conceito equivalente). 
+    fseek(arquivo, 4, SEEK_SET); 
+    ou 
+    lseek(fd, 4, SEEK_SET); 
 
 
 ## Exemplos de uso das opções do menu
