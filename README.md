@@ -104,12 +104,12 @@ A struct FCB representa o File Control Block de cada arquivo. Ela armazena nome,
 ## Objetivos
 
 Arquivo como tipo abstrato com atributos.    
-    | typedef struct FCB    
-    | Atende: Nome, Identificador (inode), Tipo, Tamanho, Proteção, Datas    
+    typedef struct FCB    
+    Atende: Nome, Identificador (inode), Tipo, Tamanho, Proteção, Datas    
     
 Estrutura de diretórios (Estrutura hierárquica).    
-    | typedef struct Diretorio    
-    | operações: mkdir, cd, pwd, ls    
+    typedef struct Diretorio    
+    operações: mkdir, cd, pwd, ls    
     
 Operações básicas com arquivos
 | Operação	    |Implementada   |
@@ -125,25 +125,25 @@ Operações básicas com arquivos
 
 Controle de acesso -- gerenciamento de permissões.  
     possui:     
-        chmodSimulado()
-        temPermissao()
-    verifica:   
-        cat, echo, rm, cp, mv
+        chmodSimulado()    
+        temPermissao()    
+    verifica:       
+        cat, echo, rm, cp, mv    
 
-Mapeamento lógico → físico. 
-    char disco[TAM_DISCO];  
-        blocoInicial
-        qtdBlocos
-    Arquivo lógico → Blocos físicos simulados.
+Mapeamento lógico → físico.     
+    char disco[TAM_DISCO];      
+        blocoInicial    
+        qtdBlocos    
+    Arquivo lógico → Blocos físicos simulados.    
 
-Reposicionar.
-    criar, escrever, ler, reposicionar, excluir e truncar.  
-        void seekSimulado(char *nome, int posicao)
-    reposicionamento do ponteiro de leitura, equivalente ao uso de: fseek() ou lseek(). 
+Reposicionar.    
+    criar, escrever, ler, reposicionar, excluir e truncar.      
+        void seekSimulado(char *nome, int posicao)    
+    reposicionamento do ponteiro de leitura, equivalente ao uso de: fseek() ou lseek().     
 
-Truncar.    
-    void truncateSimulado(char *nome)   
-    Isso corresponde exatamente ao comportamento conceitual de: truncate -s 0 arquivo.txt   
+Truncar.        
+    void truncateSimulado(char *nome)       
+    Isso corresponde exatamente ao comportamento conceitual de: truncate -s 0 arquivo.txt       
 
 ## 3.Objetivos Específicos
 
