@@ -2,9 +2,9 @@
 
 Universidade do Vale do Itajaí    
 Nomes:   
-Gabriel Tenfen    
-Leonardo Alberto da Silva    
-Mariana Leal    
+    Gabriel Tenfen    
+    Leonardo Alberto da Silva    
+    Mariana Leal    
 Disciplina: Sistemas Operacionais    
 Atividade M3    
 TRABALHO AVALIATIVO:     
@@ -20,20 +20,20 @@ Este projeto implementa um mini-sistema de arquivos em memória utilizando a lin
 
 O código foi desenvolvido em C, usando o Windows Subsystem for Linux (WSL) no Visual Studio Code.
 
-ferramentas de compilação:
-    Compilador GCC (GNU Compiler Collection) para compilação do código-fonte.
-    Visual Studio Code (VS Code) como ambiente de desenvolvimento principal.
-    Extensão WSL do VS Code para integração direta com o ambiente Linux.
-    Terminal Linux do Ubuntu/WSL para compilação e execução do simulador.
+ferramentas de compilação:    
+    Compilador GCC (GNU Compiler Collection) para compilação do código-fonte.    
+    Visual Studio Code (VS Code) como ambiente de desenvolvimento principal.    
+    Extensão WSL do VS Code para integração direta com o ambiente Linux.    
+    Terminal Linux do Ubuntu/WSL para compilação e execução do simulador.    
 
 ## Como compilar / Executar
 
 No terminal do WSL, dentro da pasta do projeto:
 
-Compilar
+Compilar    
     gcc main.c sistemaArquivos.c -o simulador
 
-Executar
+Executar    
     ./simulador
 
 
@@ -41,21 +41,21 @@ Executar
 
 O sistema possui um menu interativo com operações semelhantes aos comandos Linux:
 
-|ls:    | lista arquivos e diretórios simulados.                                    |
-|mkdir: | cria diretórios.                                                          |
-|cd:    | navega entre diretórios.                                                  |
-|pwd:   | mostra o diretório atual.                                                 |
-|touch: | cria arquivos.                                                            |
-|echo:  | escreve conteúdo em um arquivo.                                           |
-|cat:   | lê o conteúdo de um arquivo.                                              |
-|chmod: | altera permissões RWX.                                                    |
-|rm:    | remove arquivos.                                                          |
-|cp:    | copia arquivos.                                                           |
-|mv:    | move ou renomeia arquivos.                                                |
-|mostrar blocos: | exibe o estado do disco simulado.                                |
-|stat:      | exibe todos os atributos armazenados no FCB do arquivo.               |
-|truncate:  | remove todo o conteúdo de um arquivo sem excluí-lo.                   |
-|seek:      | reposiciona a leitura para uma posição específica dentro do arquivo.  |
+|ls:    | lista arquivos e diretórios simulados.                                    |    
+|mkdir: | cria diretórios.                                                          |    
+|cd:    | navega entre diretórios.                                                  |    
+|pwd:   | mostra o diretório atual.                                                 |    
+|touch: | cria arquivos.                                                            |    
+|echo:  | escreve conteúdo em um arquivo.                                           |    
+|cat:   | lê o conteúdo de um arquivo.                                              |    
+|chmod: | altera permissões RWX.                                                    |    
+|rm:    | remove arquivos.                                                          |    
+|cp:    | copia arquivos.                                                           |    
+|mv:    | move ou renomeia arquivos.                                                |    
+|mostrar blocos: | exibe o estado do disco simulado.                                |    
+|stat:      | exibe todos os atributos armazenados no FCB do arquivo.               |    
+|truncate:  | remove todo o conteúdo de um arquivo sem excluí-lo.                   |    
+|seek:      | reposiciona a leitura para uma posição específica dentro do arquivo.  |    
 
     Comparação com comandos Linux reais
 |Simulador	    Linux real
