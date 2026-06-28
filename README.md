@@ -1,13 +1,14 @@
 # Mini-Sistema de Arquivos em Memória em C
 
- Universidade do Vale do Itajaí
- Nomes:   Gabriel Tenfen
-          Leonardo Alberto da Silva
-          Mariana Leal
- Disciplina: Sistemas Operacionais
- Atividade M3
- TRABALHO AVALIATIVO: 
- Implementação e Análise de um Mini-Sistema de Arquivos em Memória em C
+Universidade do Vale do Itajaí
+Nomes:   
+Gabriel Tenfen
+Leonardo Alberto da Silva
+Mariana Leal
+Disciplina: Sistemas Operacionais
+Atividade M3
+TRABALHO AVALIATIVO: 
+Implementação e Análise de um Mini-Sistema de Arquivos em Memória em C
 
 
 ## Descrição
@@ -15,7 +16,7 @@
 Este projeto implementa um mini-sistema de arquivos em memória utilizando a linguagem C. O simulador representa diretórios, arquivos, permissões, FCBs, inodes simulados e alocação de blocos de forma interna, sem usar diretamente o sistema de arquivos real do Linux para armazenar os arquivos simulados.
 
 
-## 4. Metodologia e Ferramentas
+## Metodologia e Ferramentas
 
 O código foi desenvolvido em C, usando o Windows Subsystem for Linux (WSL) no Visual Studio Code.
 
@@ -29,67 +30,68 @@ ferramentas de compilação:
 
 No terminal do WSL, dentro da pasta do projeto:
 
-    Compilar
-gcc main.c sistemaArquivos.c -o simulador
+Compilar
+    gcc main.c sistemaArquivos.c -o simulador
 
-    Executar
-./simulador
+Executar
+    ./simulador
 
 
 ## Funcionalidades
 
 O sistema possui um menu interativo com operações semelhantes aos comandos Linux:
 
-ls: lista arquivos e diretórios simulados.
-mkdir: cria diretórios.
-cd: navega entre diretórios.
-pwd: mostra o diretório atual.
-touch: cria arquivos.
-echo: escreve conteúdo em um arquivo.
-cat: lê o conteúdo de um arquivo.
-chmod: altera permissões RWX.
-rm: remove arquivos.
-cp: copia arquivos.
-mv: move ou renomeia arquivos.
-mostrar blocos: exibe o estado do disco simulado.
-stat: exibe todos os atributos armazenados no FCB do arquivo.
-truncate: remove todo o conteúdo de um arquivo sem excluí-lo.
-seek: reposiciona a leitura para uma posição específica dentro do arquivo.
+|ls:    | lista arquivos e diretórios simulados.                                    |
+|mkdir: | cria diretórios.                                                          |
+|cd:    | navega entre diretórios.                                                  |
+|pwd:   | mostra o diretório atual.                                                 |
+|touch: | cria arquivos.                                                            |
+|echo:  | escreve conteúdo em um arquivo.                                           |
+|cat:   | lê o conteúdo de um arquivo.                                              |
+|chmod: | altera permissões RWX.                                                    |
+|rm:    | remove arquivos.                                                          |
+|cp:    | copia arquivos.                                                           |
+|mv:    | move ou renomeia arquivos.                                                |
+|mostrar blocos: | exibe o estado do disco simulado.                                |
+|stat:      | exibe todos os atributos armazenados no FCB do arquivo.               |
+|truncate:  | remove todo o conteúdo de um arquivo sem excluí-lo.                   |
+|seek:      | reposiciona a leitura para uma posição específica dentro do arquivo.  |
 
     Comparação com comandos Linux reais
-Simulador	Linux real
-    ls	        ls -l
-    mkdir	    mkdir nome
-    cd	        cd nome
-    touch	    touch arquivo
-    echo	    echo "texto" > arquivo
-    cat	        cat arquivo
-    chmod	    chmod 644 arquivo
-    rm	        rm arquivo
-    cp	        cp origem destino
-    mv	        mv origem destino
-mostrar blocos	Não possui equivalente direto (função didática do simulador)
-    stat	    stat arquivo
-    truncate	truncate -s 0 arquivo
-    seek	    lseek() (chamada de sistema) ou reposicionamento usando fseek() em programas C
+|Simulador	    Linux real
+| -------------| -------------------------- |
+|    ls	       |  ls -l                     |
+|    mkdir	   |  mkdir nome                |
+|    cd	       |  cd nome                   |
+|    touch	   |  touch arquivo             |
+|    echo	   |  echo "texto" > arquivo    |
+|    cat	   |      cat arquivo           |
+|    chmod	   |  chmod 644 arquivo         |
+|    rm	       |  rm arquivo                |
+|    cp	       |  cp origem destino         |
+|    mv	       |  mv origem destino         |
+|mostrar blocos|	Não possui equivalente direto (função didática do simulador)    |
+|    stat	   | stat arquivo               |
+|    truncate  |	truncate -s 0 arquivo   |
+|    seek	   |   lseek() (chamada de sistema) ou reposicionamento usando fseek() em programas C   |
 
 
 ## Conceitos implementados
 
-    Arquivos e atributos
-Cada arquivo possui atributos semelhantes aos de um sistema real, como nome, tamanho, tipo, datas, permissões e inode.
+Arquivos e atributos
+    Cada arquivo possui atributos semelhantes aos de um sistema real, como nome, tamanho, tipo, datas, permissões e inode.
 
-    File Control Block e inode
-O FCB armazena os metadados do arquivo. O campo inode é um identificador único gerado automaticamente para cada arquivo criado.
+File Control Block e inode
+    O FCB armazena os metadados do arquivo. O campo inode é um identificador único gerado automaticamente para cada arquivo criado.
 
-    Diretórios em árvore
-Os diretórios são representados por uma estrutura em árvore. Cada diretório pode ter subdiretórios e arquivos, permitindo organização hierárquica semelhante ao Linux.
+Diretórios em árvore
+    Os diretórios são representados por uma estrutura em árvore. Cada diretório pode ter subdiretórios e arquivos, permitindo organização hierárquica semelhante ao Linux.
 
-    Permissões RWX
-O sistema implementa permissões no formato proprietário, grupo e outros. As permissões são armazenadas em formato numérico, como 644 ou 755, e verificadas antes de operações de leitura, escrita e execução.
+Permissões RWX
+    O sistema implementa permissões no formato proprietário, grupo e outros. As permissões são armazenadas em formato numérico, como 644 ou 755, e verificadas antes de operações de leitura, escrita e execução.
 
-    Alocação de blocos
-O sistema possui um disco simulado representado por um vetor de caracteres. Os arquivos são divididos em blocos de tamanho fixo, e o FCB guarda o bloco inicial e a quantidade de blocos utilizados.
+Alocação de blocos
+    O sistema possui um disco simulado representado por um vetor de caracteres. Os arquivos são divididos em blocos de tamanho fixo, e o FCB guarda o bloco inicial e a quantidade de blocos utilizados.
 
 ## Estruturas de dados utilizadas
 
@@ -101,50 +103,51 @@ A struct FCB representa o File Control Block de cada arquivo. Ela armazena nome,
 
 ## Objetivos
 
-Arquivo como tipo abstrato com atributos
-    typedef struct FCB
-    Atende:Nome, Identificador (inode), Tipo, Tamanho, Proteção, Datas
+Arquivo como tipo abstrato com atributos.
+    | typedef struct FCB
+    | Atende: Nome, Identificador (inode), Tipo, Tamanho, Proteção, Datas
 
-Estrutura de diretórios (Estrutura hierárquica)
-    typedef struct Diretorio
-    operações: mkdir, cd, pwd, ls
+Estrutura de diretórios (Estrutura hierárquica).
+    | typedef struct Diretorio
+    | operações: mkdir, cd, pwd, ls
 
 Operações básicas com arquivos
-    Operação	Implementada
-    Criar	    touch
-    Escrever	echo
-    Ler 	    cat
-    Excluir	    rm
-    Copiar	    cp
-    Mover	    mv
-    Reposicionar seek
-    Truncar     truncate
+    | Operação	    |Implementada   |
+    | ------------- | -------       |
+    |Criar	        | touch         |
+    |Escrever	    | echo          |
+    |Ler 	        | cat           |
+    |Excluir	    | rm            |
+    |Copiar	        | cp            |
+    |Mover	        | mv            |
+    |Reposicionar   | seek          |
+    |Truncar        | truncate      |
 
-Controle de acesso -- gerenciamento de permissões
-    possui: 
+Controle de acesso -- gerenciamento de permissões.  
+    possui:     
         chmodSimulado()
         temPermissao()
-    verifica:
+    verifica:   
         cat, echo, rm, cp, mv
 
-Mapeamento lógico → físico
-    char disco[TAM_DISCO];
+Mapeamento lógico → físico. 
+    char disco[TAM_DISCO];  
         blocoInicial
         qtdBlocos
     Arquivo lógico → Blocos físicos simulados.
 
-Reposicionar    
-    criar, escrever, ler, reposicionar, excluir e truncar
+Reposicionar.
+    criar, escrever, ler, reposicionar, excluir e truncar.  
         void seekSimulado(char *nome, int posicao)
-    reposicionamento do ponteiro de leitura, equivalente ao uso de: fseek() ou lseek()
+    reposicionamento do ponteiro de leitura, equivalente ao uso de: fseek() ou lseek(). 
 
-Truncar
-    void truncateSimulado(char *nome)
-    Isso corresponde exatamente ao comportamento conceitual de: truncate -s 0 arquivo.txt
+Truncar.    
+    void truncateSimulado(char *nome)   
+    Isso corresponde exatamente ao comportamento conceitual de: truncate -s 0 arquivo.txt   
 
 ## 3.Objetivos Específicos
 
-        3.1. Modelagem da Estrutura de Diretórios:
+3.1. Modelagem da Estrutura de Diretórios:
 
 A estrutura de diretórios está modelada assim:
     typedef struct Diretorio
@@ -165,14 +168,14 @@ Navegação entre diretórios: void cdSimulado(char *nome)
 | Retorno ao diretório pai com `cd ..`      |   Sim   |
 
 
-        3.2. Representação e Gerenciamento de Arquivos e Metadados:
+3.2. Representação e Gerenciamento de Arquivos e Metadados:
 
 Criado a estrutura FCB dentro de sistemaArquivos.h
 Também implementado as operações basicas, listadas em Objetivos
 Ponto importante, as operações são feitas na estrutura simulada, usando FCB, Diretorio, disco[] e blocosUsados[], não no sistema de arquivos real do Linux.
 
 
-        3.3. Controle de Acesso e Permissões:
+3.3. Controle de Acesso e Permissões:
 
 |Requisito	                                    | Atende?
 | ----------------------------------------------| -------
@@ -187,23 +190,23 @@ Ponto importante, as operações são feitas na estrutura simulada, usando FCB, 
 |Mensagem de permissão negada	                | Sim
 
 
-        3.4. Simulação de Alocação de Blocos
+3.4. Simulação de Alocação de Blocos
 
-código possui o disco simulado:
-    char disco[TAM_DISCO];
-    int blocosUsados[MAX_BLOCOS];
-Isso representa:
-    disco[]: área de armazenamento simulada;
-    blocosUsados[]: controle dos blocos livres e ocupados.
+código possui o disco simulado:     
+    char disco[TAM_DISCO];  
+    int blocosUsados[MAX_BLOCOS];   
+Isso representa:        
+    disco[]: área de armazenamento simulada;    
+    blocosUsados[]: controle dos blocos livres e ocupados.  
 
-Também possui alocação contínua simplificada:
+Também possui alocação contínua simplificada:   
     int alocarBlocos(int tamanho)
 
-O FCB referencia os blocos por meio destes campos:
-    int blocoInicial;
-    int qtdBlocos;
-        blocoInicial: onde o arquivo começa no disco simulado;
-        qtdBlocos: quantos blocos o arquivo ocupa.
+O FCB referencia os blocos por meio destes campos:  
+    int blocoInicial;   
+    int qtdBlocos;          
+        blocoInicial: onde o arquivo começa no disco simulado;  
+        qtdBlocos: quantos blocos o arquivo ocupa.  
 
 ## Tratamento de Erros:
 
@@ -220,54 +223,54 @@ O FCB referencia os blocos por meio destes campos:
 
 ## Exemplos
 
-        Criando um diretório
+Criando um diretório
 
-Simulador
+Simulador.
     Opcao: 2
     Nome do diretorio: documentos
-Linux
+Linux.
     mkdir documentos
     Navegando entre diretórios
 
-Simulador
+Simulador.
     Opcao: 3
     Diretorio: documentos
-Linux
+Linux.
     cd documentos
     Criando um arquivo
 
-Simulador
+Simulador.
     Opcao: 5
     Nome do arquivo: teste.txt
-Linux
+Linux.
     touch teste.txt
     Escrevendo conteúdo em um arquivo
 
-Simulador
+Simulador.
     Opcao: 6
     Arquivo: teste.txt
     Conteudo: Ola Mundo
-Linux
+Linux.
     echo "Ola Mundo" > teste.txt
     Lendo o conteúdo de um arquivo
 
-Simulador
+Simulador.
     Opcao: 7
     Arquivo: teste.txt
     Saída: Ola Mundo
-Linux
+Linux.
     cat teste.txt
     Alterando permissões
 
-Simulador
+Simulador.
     Opcao: 8
     Arquivo: teste.txt
     Permissao: 644
-Linux
+Linux.
     chmod 644 teste.txt
     Exibindo os metadados do arquivo
 
-Simulador
+Simulador.
     Opcao: 13
     Arquivo: teste.txt
     Saída (exemplo):
@@ -277,23 +280,23 @@ Simulador
         Permissões: rw-r--r--
         Bloco inicial: 0
         Quantidade de blocos: 1
-Linux
+Linux.
     stat teste.txt
     Truncando um arquivo
 
-Simulador
+Simulador.
     Opcao: 14
     Arquivo: teste.txt
-Linux
+Linux.
     truncate -s 0 teste.txt
     Reposicionando a leitura
 
-Simulador
+Simulador.
     Opcao: 15
     Arquivo: teste.txt
     Posicao: 4
     Saída: Mundo
-Linux (conceito equivalente)
+Linux (conceito equivalente).
     fseek(arquivo, 4, SEEK_SET);
     ou
     lseek(fd, 4, SEEK_SET);
