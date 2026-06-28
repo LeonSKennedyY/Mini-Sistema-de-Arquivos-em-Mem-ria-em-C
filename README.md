@@ -149,15 +149,15 @@ Truncar.
 
 3.1. Modelagem da Estrutura de Diretórios:
 
-A estrutura de diretórios está modelada assim:
-    typedef struct Diretorio
-Representa uma árvore de diretórios, porque cada diretório possui:
-    pai: aponta para o diretório anterior/superior;
-    subdirs: aponta para seus subdiretórios;
-    prox: permite encadear vários diretórios no mesmo nível;
-    arquivos: lista os arquivos dentro daquele diretório.
-Também possui criação de diretórios: void mkdirSimulado(char *nome)
-Navegação entre diretórios: void cdSimulado(char *nome)
+A estrutura de diretórios está modelada assim:    
+    typedef struct Diretorio    
+Representa uma árvore de diretórios, porque cada diretório possui:    
+    pai: aponta para o diretório anterior/superior;    
+    subdirs: aponta para seus subdiretórios;    
+    prox: permite encadear vários diretórios no mesmo nível;    
+    arquivos: lista os arquivos dentro daquele diretório.    
+Também possui criação de diretórios: void mkdirSimulado(char *nome)    
+Navegação entre diretórios: void cdSimulado(char *nome)    
 
 | Requisito                                 | Atende? |
 | ----------------------------------------- | ------- |
@@ -170,9 +170,9 @@ Navegação entre diretórios: void cdSimulado(char *nome)
 
 3.2. Representação e Gerenciamento de Arquivos e Metadados:
 
-Criado a estrutura FCB dentro de sistemaArquivos.h
-Também implementado as operações basicas, listadas em Objetivos
-Ponto importante, as operações são feitas na estrutura simulada, usando FCB, Diretorio, disco[] e blocosUsados[], não no sistema de arquivos real do Linux.
+Criado a estrutura FCB dentro de sistemaArquivos.h    
+Também implementado as operações basicas, listadas em Objetivos    
+Ponto importante, as operações são feitas na estrutura simulada, usando FCB, Diretorio, disco[] e blocosUsados[], não no sistema de arquivos real do Linux.    
 
 
 3.3. Controle de Acesso e Permissões:
@@ -193,20 +193,20 @@ Ponto importante, as operações são feitas na estrutura simulada, usando FCB, 
 3.4. Simulação de Alocação de Blocos
 
 código possui o disco simulado:     
-    char disco[TAM_DISCO];  
-    int blocosUsados[MAX_BLOCOS];   
-Isso representa:        
-    disco[]: área de armazenamento simulada;    
-    blocosUsados[]: controle dos blocos livres e ocupados.  
+    char disco[TAM_DISCO];      
+    int blocosUsados[MAX_BLOCOS];       
+Isso representa:            
+    disco[]: área de armazenamento simulada;        
+    blocosUsados[]: controle dos blocos livres e ocupados.      
 
-Também possui alocação contínua simplificada:   
-    int alocarBlocos(int tamanho)
+Também possui alocação contínua simplificada:       
+    int alocarBlocos(int tamanho)    
 
-O FCB referencia os blocos por meio destes campos:  
-    int blocoInicial;   
-    int qtdBlocos;          
-        blocoInicial: onde o arquivo começa no disco simulado;  
-        qtdBlocos: quantos blocos o arquivo ocupa.  
+O FCB referencia os blocos por meio destes campos:      
+    int blocoInicial;       
+    int qtdBlocos;              
+        blocoInicial: onde o arquivo começa no disco simulado;      
+        qtdBlocos: quantos blocos o arquivo ocupa.      
 
 ## Tratamento de Erros:
 
