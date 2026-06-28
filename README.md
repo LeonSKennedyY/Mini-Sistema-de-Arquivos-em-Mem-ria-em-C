@@ -41,21 +41,21 @@ Executar
 
 O sistema possui um menu interativo com operações semelhantes aos comandos Linux:
 
-|ls:    | lista arquivos e diretórios simulados.                                    |    
-|mkdir: | cria diretórios.                                                          |    
-|cd:    | navega entre diretórios.                                                  |    
-|pwd:   | mostra o diretório atual.                                                 |    
-|touch: | cria arquivos.                                                            |    
-|echo:  | escreve conteúdo em um arquivo.                                           |    
-|cat:   | lê o conteúdo de um arquivo.                                              |    
-|chmod: | altera permissões RWX.                                                    |    
-|rm:    | remove arquivos.                                                          |    
-|cp:    | copia arquivos.                                                           |    
-|mv:    | move ou renomeia arquivos.                                                |    
-|mostrar blocos: | exibe o estado do disco simulado.                                |    
-|stat:      | exibe todos os atributos armazenados no FCB do arquivo.               |    
-|truncate:  | remove todo o conteúdo de um arquivo sem excluí-lo.                   |    
-|seek:      | reposiciona a leitura para uma posição específica dentro do arquivo.  |    
+ls:     lista arquivos e diretórios simulados.                                        
+mkdir:  cria diretórios.                                                              
+cd:     navega entre diretórios.                                                      
+pwd:    mostra o diretório atual.                                                     
+touch:  cria arquivos.                                                                
+echo:   escreve conteúdo em um arquivo.                                               
+cat:    lê o conteúdo de um arquivo.                                                  
+chmod:  altera permissões RWX.                                                        
+rm:     remove arquivos.                                                              
+cp:     copia arquivos.                                                               
+mv:     move ou renomeia arquivos.                                                    
+mostrar blocos:  exibe o estado do disco simulado.                                    
+stat:       exibe todos os atributos armazenados no FCB do arquivo.                   
+truncate:   remove todo o conteúdo de um arquivo sem excluí-lo.                       
+seek:       reposiciona a leitura para uma posição específica dentro do arquivo.  
 
     Comparação com comandos Linux reais
 |Simulador	    Linux real
